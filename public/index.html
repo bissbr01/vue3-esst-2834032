@@ -9,10 +9,15 @@
 </head>
 <body class="container mt-5">
 <!-- App Template Code Here -->
-<section id="app">
-  <h2>{{ name }}</h2>
-  <p>{{description}}</p>
-  <div class="h3">${{price}}</div>
+<section id="app" class="container">
+  <div class="card">
+    <h2>{{ name }}</h2>
+    <div class="content">
+      <p>{{description}}</p>
+      <div class="h3">${{price}}</div>
+      <img :src="imgSrc" :alt="description" class="img-fluid"/>
+    </div>
+  </div>
 </section>
 <!-- App Template Code Here -->
 
@@ -32,5 +37,21 @@ const App = {
 Vue.createApp(App).mount('#app')
 </script>
 <!-- App Script Code Here -->
+<style scoped>
+  .container {
+    display: flex;
+    background-color:aliceblue;
+  }
+  .card {
+    align-content: center;
+    justify-items: center;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+</style>
+
 </body>
 </html>
